@@ -17,6 +17,6 @@ public class deserializaCidade {
 
         System.out.println(cidade1);
         System.out.println(cidade1.getNome());
-        System.out.println(cidade1.getEstado());
+        System.out.println(cidade1.getEstado().getNome());
     }
 }

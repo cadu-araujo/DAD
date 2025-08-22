@@ -4,22 +4,22 @@ import java.io.Serializable;
 
 public class Cidade implements Serializable {
     private String Nome;
-    private String Estado;
+    private Estado estado;
 
     public Cidade() {
     }
 
-    public Cidade(String nome, String estado) {
+    public void setEstado(model.Estado estado) {
+        this.estado = estado;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public Cidade(String nome, model.Estado estado1) {
         Nome = nome;
-        Estado = estado;
-    }
-
-    public String getEstado() {
-        return Estado;
-    }
-
-    public void setEstado(String estado) {
-        Estado = estado;
+        this.estado = estado1;
     }
 
     public String getNome() {
@@ -34,7 +34,7 @@ public class Cidade implements Serializable {
     public String toString() {
         return "Cidade{" +
                 "Nome='" + Nome + '\'' +
-                ", Estado='" + Estado + '\'' +
+                ", estado=" + estado +
                 '}';
     }
 }
