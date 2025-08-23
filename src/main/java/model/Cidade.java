@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 public class Cidade implements Serializable {
-    private String Nome;
+    private String nome;
     private Estado estado;
 
     public Cidade() {
@@ -11,30 +11,33 @@ public class Cidade implements Serializable {
 
     public void setEstado(model.Estado estado) {
         this.estado = estado;
+        estado.setCidade(this);
     }
 
     public Estado getEstado() {
         return estado;
     }
 
-    public Cidade(String nome, model.Estado estado1) {
-        Nome = nome;
-        this.estado = estado1;
+    public Cidade(String nome, Estado estado) {
+        this.nome = nome;
+        this.estado = estado;
+        this.estado.setCidade(this);
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
+        this.nome = nome;
     }
+
 
     @Override
     public String toString() {
         return "Cidade{" +
-                "Nome='" + Nome + '\'' +
-                ", estado=" + estado +
+                "nome='" + nome + '\'' +
+                ", estado=" + estado.getNome() +
                 '}';
     }
 }

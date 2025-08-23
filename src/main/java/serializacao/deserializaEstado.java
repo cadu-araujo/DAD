@@ -1,5 +1,6 @@
 package serializacao;
 
+import model.Cidade;
 import model.Estado;
 
 import java.io.*;
@@ -11,9 +12,12 @@ public class deserializaEstado {
         ObjectInputStream deserializador = new ObjectInputStream(arquivo);
 
         Estado objeto = (Estado) deserializador.readObject();
-
         System.out.println(objeto);
         System.out.println(objeto.getNome());
         System.out.println(objeto.getSigla());
+
+        for(Cidade cidade: objeto.getCidades()){
+            System.out.println(cidade.getNome());
+        }
     }
 }
