@@ -17,7 +17,6 @@ public class serializaEstado {
         Cidade cidade3 = new Cidade("Coari", est);
 
         FileOutputStream arquivo = new FileOutputStream("Estado.dat");
-
         ObjectOutputStream serializador = new ObjectOutputStream(arquivo);
 
         serializador.writeObject(est);
